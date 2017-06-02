@@ -1,0 +1,31 @@
+# Story-Board configuration
+
+# path to data
+data:
+    local: /Users/lingxiao/Documents/camera-project/data/story-board
+    eniac: /home1/l/lingxiao/xiao/camera-project/data/story-board
+    tesla: /data2/xiao
+    grid: /nlp/data/xiao/cam-proj/story-board
+
+# open cv
+opencv: /Users/lingxiao/anaconda/lib/python2.7/site-packages/opencv
+
+# ID for clarifai account
+clarifai: 
+    APP-ID: gUglQJObqqhmIFliNvmGz8W4qu328HhAT9hjFbpH
+    APP-SECRET: ANTIvsmSTQl-OBA19X_YlSYrMhwYMD0EjDSwknuG
+
+
+# facebook account information for crawling tinder
+facebook:
+    meg:
+        token: 
+        id: 
+    xiao:
+        token: EAAGm0PX4ZCpsBAAfuXhNVOggtQ1DppSFcHJU3d8mQZAUWLTdg2EFxyXbiClHUwJp5fH5JOa4eeH51BZBigltX281PVzj6yJO8c9BnV3LzFmlgvELFredhiCiVkSAGob5ZBG777jTMvSqSZCc872iNlVDcvdDMfiPFuHRMcmuxnR1VTZBqG0ZA0MfpBMPo3svUgglutyQlVMNOOTZAbgm9mQUpd2DVksA63nMSBWKoyHwaxHfvA8zAvhvrZBbvbc9rOOEZD
+        id: 1429200388
+
+
+
+
+

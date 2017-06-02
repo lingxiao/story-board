@@ -1,0 +1,10 @@
+quota: error while getting quota from nlpgridio3.seas.upenn.edu:/data for lingxiao (id 15210): Connection refused
++ export PYTHONPATH=/home1/l/lingxiao/xiao/story-board/
++ PYTHONPATH=/home1/l/lingxiao/xiao/story-board/
++ cd /home1/l/lingxiao/xiao/story-board/
++ python /home1/l/lingxiao/xiao/story-board/experiments/face/script/script-G.py
+quota: error while getting quota from nlpgridio3.seas.upenn.edu:/data for lingxiao (id 15210): Connection refused
++ export PYTHONPATH=/home1/l/lingxiao/xiao/story-board/
++ PYTHONPATH=/home1/l/lingxiao/xiao/story-board/
++ cd /home1/l/lingxiao/xiao/story-board/
++ python /home1/l/lingxiao/xiao/story-board/experiments/face/script/script-B.py

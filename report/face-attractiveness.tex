@@ -1,0 +1,69 @@
+\section{Measuring Attractiveness}
+
+Dates: May 28th,  2017 - June 4th
+
+
+\subsection{Problem Statement}
+
+We wish to construct a measure of attractiveness individualized for each person, so that for every person $k$, and a given set of faces $\mathbb{I}$, we have a function $f_k$ so that:
+	\[
+		f_k : \mathbb{I} \rightarrow \mathbb{S},
+	\]
+
+where $\mathbb{S} = \{1,\ldots,N\}$ is some rating system for appropriately large N. Towards this end, we need to:
+
+\begin{enumerate}
+	\item Detect face
+	\item Place bounding box on face and extract this bounding box
+	\item Normalize face
+	\item Extract appropriate features from face 
+	\item Relate feature represenation of face to $\mathbb{S}$.
+\end{enumerate}
+
+In this next few sections we will describe each step and detail, and evaluate each open source packages for (1). how the problem is posed, (2). performance on current data set, and (3) complexity in terms of run-time, disk, or network calls. 
+
+\subsection{Face Detection}
+
+We will evalute the following libraries:
+
+\begin{enumerate}
+	\item FaceNet
+	\item YOLO900
+	\item OpenCV
+\end{enumerate}
+
+The evaluation set will have both positive and negative examples. The positive example will be $1,000$ images from the Tinder-Female dataset, the images are manually selected so that a face is gauranteed to appear somewhere in the image (not a given). The negative data set will be composed of $1,000$ stock images where no faces appear. We will select the library that gives the lowest \textit{false negative} performance.
+
+\subsubsection{FaceNet in Torch (OpenFace)}.
+
+This library is found here: https://cmusatyalab.github.io/openface/. It is a Torch implementation of deep neural net described in the paper "FaceNet: A Unified Embedding for Face Recognition and Clustering" by Schroff, et. al. The documentation appears reasonable. However, this library does not detect faces, but rather finds a representation so that similar faces supposely are closer on the unit sphere. The library recommends dlib or OpenCV for face detection. 
+
+Now we will review the method in FaceNet. 
+
+\subsubsection{FaceNet in Tensorflow}.
+
+There is one implementation found on github at: https://github.com/davidsandberg/facenet. There is no documentation, although the code appears reasonably organized. This gives me the possiblity of training my own classifer on the proprietary Tinder data set.
+
+`\subsubsection{YOLO9000}.
+
+
+\subsubsection{OpenCV}.
+
+This is the most mature of all libraries, and thus the documentation is complete. although it does not use convolutional neural nets, installing OpenCV is very convoluted indeed. 
+
+
+
+\subsection{Normalization via Appearence Based Models}
+
+
+
+\subsection{Existing Solutions}
+
+
+\subsection{Implementation}
+
+
+\subsection{Results}
+
+
+
