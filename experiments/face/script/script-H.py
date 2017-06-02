@@ -11,6 +11,8 @@ import numpy as np
 from PIL import Image as Im
 
 from app import *
+from utilities import *
+from experiments.face import *
 
 ############################################################
 '''
@@ -23,7 +25,7 @@ model_root  = app.fetch('assets/dlib')
 shard_root  = app.fetch('female-shards')
 shards      = [ os.path.join(shard_root, p) for p in os.listdir(shard_root) ]
 out_root    = app.fetch('data/results/face/dlib-resnet_model_v1')
-# os.path.join(work_dir['results'], 'dlib-resnet_model_v1')
+
 
 ############################################################
 

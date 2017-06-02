@@ -11,6 +11,8 @@ import numpy as np
 from PIL import Image as Im
 
 from app import *
+from utilities import *
+from experiments.face import *
 
 ############################################################
 '''
