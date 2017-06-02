@@ -87,6 +87,16 @@ class App:
     # save environmental variables
     self.ENV = ENV
 
+  def fetch(self, name):
+    return fetch_path(self.ENV, name)
+
+  def module(self, name, subdirs = []):
+    return make_dirs(get_path(self.ENV, name), subdirs)
+
+  def shard_data(self):
+
+    ENV = self.ENV
+    
     # sharding data pointers
     fem_dir = shard_data_pointers(fetch_path(ENV, 'data/female'))
     shard_data_pointers(fem_dir)
@@ -95,11 +105,6 @@ class App:
     shard_data_pointers(mal_dir)
 
 
-  def fetch(self, name):
-    return fetch_path(self.ENV, name)
-
-  def module(self, name, subdirs = []):
-    return make_dirs(get_path(self.ENV, name), subdirs)
 
 
 ############################################################

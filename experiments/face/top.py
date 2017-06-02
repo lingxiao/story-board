@@ -53,6 +53,7 @@ def make_scripts(shards):
 
 
 if False:
+	app.shard_data()
 	shard_root  = app.fetch('female-shards')
 	shards      = [ os.path.join(shard_root, p) for p in os.listdir(shard_root) ]
 	make_scripts(shards)
