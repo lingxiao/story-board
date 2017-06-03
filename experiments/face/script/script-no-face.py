@@ -8,7 +8,11 @@
 import os
 import pickle
 import numpy as np
-from PIL import Image as Im
+
+from skimage import io
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
+
 
 from app import *
 from utilities import *
@@ -36,6 +40,5 @@ if True:
 		           , debug = False
 		           )
 
-
 with open(os.path.join(out_root,'no-faces.pkl'),'rb') as h:
-	xs = pickle.load(h)
+	ret = pickle.load(h)

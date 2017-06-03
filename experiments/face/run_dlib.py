@@ -14,6 +14,9 @@ import dlib
 import numpy as np
 import pickle
 from skimage import io
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
+
 
 from app import *
 
@@ -84,6 +87,7 @@ def parse_user(in_dir, out_path, detector, shape_pred, face_phi):
 		im_paths   = [ p for p in data_paths if '.jp' in p  ]
 		pkl_path   = [ p for p in data_paths if '.pkl' in p ]
 
+
 		if pkl_path:
 			with open(pkl_path[0], 'rb') as h:
 				meta = pickle.load(h)
@@ -113,6 +117,9 @@ def parse_faces(im_paths, detector, shape_pred, face_phi):
 		try:
 			img = io.imread(im_path)
 			dets = list(enumerate(detector(img, 1)))
+
+			print im_path
+			print dets
 
 			if len(dets) == 1:
 
@@ -144,7 +151,7 @@ def parse_faces(im_paths, detector, shape_pred, face_phi):
 				faces[im_name] = {'error': 'found ' + str(len(dets)) + ' faces'}
 
 		except:
-			pass
+			print('\n\t>> warning: cannot open image: ' + im_path)
 
 	return faces		                 
 
