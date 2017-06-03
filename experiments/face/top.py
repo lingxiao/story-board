@@ -2,8 +2,7 @@
 # Module  : face/top
 # Date    : 05/28/2017
 # Author  : Xiao Ling
-
-# sources : http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html
+############################################################
 
 
 import os
@@ -52,8 +51,9 @@ def make_scripts(shards):
 	print('\n\t>> finished!')
 
 
+app.shard_data()
+
 if False:
-	app.shard_data()
 	shard_root  = app.fetch('female-shards')
 	shards      = [ os.path.join(shard_root, p) for p in os.listdir(shard_root) ]
 	make_scripts(shards)

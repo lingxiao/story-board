@@ -1,11 +1,12 @@
 # Story-Board configuration
 
 # path to data
+# /Users/lingxiao/Documents/camera-project/data/story-board
 data:
-    local: /Users/lingxiao/Documents/camera-project/data/story-board
+    local: /Users/lingxiao/Box Sync/story-board
     eniac: /home1/l/lingxiao/xiao/camera-project/data/story-board
     tesla: /data2/xiao
-    grid: /nlp/data/xiao/cam-proj/story-board
+    grid: /nlp/data/xiao/story-board
 
 # open cv
 opencv: /Users/lingxiao/anaconda/lib/python2.7/site-packages/opencv

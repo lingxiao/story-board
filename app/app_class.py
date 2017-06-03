@@ -140,7 +140,7 @@ def shard_data_pointers(usr_dir):
       with open(out_path,'wb') as h:
         pickle.dump(paths,h)
 
-    print('\n\t>> Done batching!')  
+    print('\n\t>> Done sharding!')
 
   else:
     print('\n>> Warning: did not find directory for sharding')

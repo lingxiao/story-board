@@ -38,7 +38,7 @@ def make_meta_only(image_path):
 		if os.path.exists(out_dir):
 			print('\n\t>> already copied over user ' + dir_name)
 		else:
-			os.mkdir(out)
+			os.mkdir(out_dir)
 			paths = [p for p in os.listdir(in_dir) if 'meta' in p]
 			if paths:
 				path = os.path.join(in_dir, paths[0])
@@ -106,8 +106,6 @@ def merge_remote_with_local(remote_root, local_root):
 		else:
 			print('\n\t>> moving directory to ' + tgt)
 			shutil.move(src, tgt)
-
-
 
 
 if False:

@@ -22,19 +22,20 @@ try: app
 except: app = App()
 
 model_root  = app.fetch('assets/dlib')
-shard_root  = app.fetch('female-shards')
-shards      = [ os.path.join(shard_root, p) for p in os.listdir(shard_root) ]
-out_root    = app.fetch('data/results/face/dlib-resnet_model_v1')
+usr_root    = app.fetch('no-faces')
+out_root    = app.fetch('data/results/face/no-face-dlib-resnet_model_v1')
+usr_paths   = [ os.path.join(usr_root, p) for p in os.listdir(usr_root) \
+                if '.DS_Store' not in p ]
 
 ############################################################
 
-letter = '{LETTER}'
+if True:
+	parse_all_users( [usr_root]
+		           , out_root
+		           , model_root
+		           , debug = False
+		           )
 
-shard = [s for s in shards if letter == s.split('/')[-1].split('.')[0]]
 
-if shard:
-	with open(shard[0], 'rb') as h:
-		usr_paths = pickle.load(h)
-		usr_paths = [v for _,v in usr_paths.iteritems()]
-		parse_all_users(usr_paths, out_root, model_root, debug = False)
-
+with open(os.path.join(out_root,'no-faces.pkl'),'rb') as h:
+	xs = pickle.load(h)

@@ -39,3 +39,8 @@ if shard:
 		usr_paths = [v for _,v in usr_paths.iteritems()]
 		parse_all_users(usr_paths, out_root, model_root, debug = False)
 
+
+# sanity check
+if False:
+	with open(os.path.join(out_root,'Carly-6.pkl'),'rb') as h:
+		xs = pickle.load(h)

@@ -26,7 +26,7 @@ from app import *
 '''
 app    = App()
 paths  = app.module('face')
-im_dir = app.fetch ('tinder-female/Abby-1')
+im_dir = app.fetch ('female/Abby-1')
 
 ############################################################
 '''
