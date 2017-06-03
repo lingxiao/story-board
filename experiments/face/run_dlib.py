@@ -112,46 +112,43 @@ def parse_faces(im_paths, detector, shape_pred, face_phi):
 
 	faces = dict()
 
+	ImageFile.LOAD_TRUNCATED_IMAGES = True
+
 	for im_path in im_paths:
 
-		try:
-			img = io.imread(im_path)
-			dets = list(enumerate(detector(img, 1)))
+		im_name = im_path.split('/')[-1]
+		img     = io.imread(im_path)
+		dets    = list(enumerate(detector(img, 1)))
 
-			print im_path
-			print dets
 
-			if len(dets) == 1:
+		if len(dets) == 1:
 
-				k,d = dets[0]
+			k,d = dets[0]
 
-				lft  = max(d.left()  , 0)
-				rt   = max(d.right() , 0)
-				tp   = max(d.top()   , 0)
-				bot  = max(d.bottom(), 0)
+			lft  = max(d.left()  , 0)
+			rt   = max(d.right() , 0)
+			tp   = max(d.top()   , 0)
+			bot  = max(d.bottom(), 0)
 
-				face  = img[lft:rt, tp:bot]
-				shape = shape_pred(img,d)
+			face  = img[lft:rt, tp:bot]
+			shape = shape_pred(img,d)
 
-				phi_face = face_phi.compute_face_descriptor(img, shape)
+			phi_face = face_phi.compute_face_descriptor(img, shape)
 
-				im_name = im_path.split('/')[-1]
 
-				faces[im_name] = { 'phi': phi_face
-				                 , 'box': {'left'  : lft
-				                          ,'right' : rt
-				                          ,'top'   : tp
-				                          ,'bottom': bot
-				                          }
-				                 }       
+			faces[im_name] = { 'phi': phi_face
+			                 , 'box': {'left'  : lft
+			                          ,'right' : rt
+			                          ,'top'   : tp
+			                          ,'bottom': bot
+			                          }
+			                 }       
 
-			elif len(dets) == 0:
-				faces[im_name] = {'error:' 'no faces found'}
-			else:
-				faces[im_name] = {'error': 'found ' + str(len(dets)) + ' faces'}
+		elif len(dets) == 0:
+			faces[im_name] = {'error': 'no faces found'}
+		else:
+			faces[im_name] = {'error': 'found ' + str(len(dets)) + ' faces'}
 
-		except:
-			print('\n\t>> warning: cannot open image: ' + im_path)
 
 	return faces		                 
 
