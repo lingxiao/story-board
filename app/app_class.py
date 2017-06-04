@@ -46,6 +46,9 @@ from utilities import *
               __init__.py
               top.py
 
+   shard_data: given path to data, create file with paths
+               to data, sharded by alphbetical order
+
   ==========================================================
 '''
 class App:
@@ -93,18 +96,10 @@ class App:
   def module(self, name, subdirs = []):
     return make_dirs(get_path(self.ENV, name), subdirs)
 
-  def shard_data(self):
+  def shard_data(self, rel_path):
 
-    ENV = self.ENV
-    
-    # sharding data pointers
-    fem_dir = shard_data_pointers(fetch_path(ENV, 'data/female'))
-    shard_data_pointers(fem_dir)
-    
-    mal_dir = shard_data_pointers(fetch_path(ENV, 'data/male'))
-    shard_data_pointers(mal_dir)
-
-
+    in_dir = shard_data_pointers(fetch_path(self.ENV, rel_path))
+    shard_data_pointers(in_dir)
 
 
 ############################################################
@@ -119,7 +114,11 @@ def shard_data_pointers(usr_dir):
 
   if usr_dir and os.path.exists(usr_dir):
 
-    out_dir = usr_dir + '-shards'
+    # out_dir = 'shards-' + usr_dir
+    dir_chunks = usr_dir.split('/')
+    out_dir = '/'.join(dir_chunks[0:-1])  \
+            + '/shards-'                  \
+            + dir_chunks[-1]              \
 
     if os.path.exists(out_dir):
       shutil.rmtree(out_dir)

@@ -22,10 +22,9 @@ try: app
 except: app = App()
 
 model_root  = app.fetch('assets/dlib')
-shard_root  = app.fetch('female-shards')
+shard_root  = app.fetch('shards-female')
 shards      = [ os.path.join(shard_root, p) for p in os.listdir(shard_root) ]
 out_root    = app.fetch('data/results/face/dlib-resnet_model_v1')
-
 
 ############################################################
 
@@ -39,8 +38,3 @@ if shard:
 		usr_paths = [v for _,v in usr_paths.iteritems()]
 		parse_all_users(usr_paths, out_root, model_root, debug = False)
 
-
-# sanity check
-if False:
-	with open(os.path.join(out_root,'Carly-6.pkl'),'rb') as h:
-		xs = pickle.load(h)

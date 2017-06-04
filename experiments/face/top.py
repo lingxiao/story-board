@@ -51,10 +51,16 @@ def make_scripts(shards):
 	print('\n\t>> finished!')
 
 
-app.shard_data()
+'''
+	Create most recent version of sharded data pointers
+'''
+if False:
+	app.shard_data('data/female')
+	app.shard_data('data/lfw')
+
 
 if False:
-	shard_root  = app.fetch('female-shards')
+	shard_root  = app.fetch('data/shards-female')
 	shards      = [ os.path.join(shard_root, p) for p in os.listdir(shard_root) ]
 	make_scripts(shards)
 

@@ -27,12 +27,17 @@ In this next few sections we will describe each step and detail, and evaluate ea
 We will evalute the following libraries:
 
 \begin{enumerate}
+	\item Dlib's native implmentation
 	\item FaceNet
 	\item YOLO900
 	\item OpenCV
 \end{enumerate}
 
 The evaluation set will have both positive and negative examples. The positive example will be $1,000$ images from the Tinder-Female dataset, the images are manually selected so that a face is gauranteed to appear somewhere in the image (not a given). The negative data set will be composed of $1,000$ stock images where no faces appear. We will select the library that gives the lowest \textit{false negative} performance.
+
+\subsubsection{Dlib}
+
+Preliminary results shows that Dlib's native $dlib.get_frontal_face_detector()$ works poorly on the select photographs inspected by eye. 
 
 \subsubsection{FaceNet in Torch (OpenFace)}.
 
@@ -50,8 +55,6 @@ There is one implementation found on github at: https://github.com/davidsandberg
 \subsubsection{OpenCV}.
 
 This is the most mature of all libraries, and thus the documentation is complete. although it does not use convolutional neural nets, installing OpenCV is very convoluted indeed. 
-
-
 
 \subsection{Normalization via Appearence Based Models}
 

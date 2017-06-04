@@ -17,7 +17,6 @@ from skimage import io
 from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-
 from app import *
 
 '''
@@ -142,6 +141,7 @@ def parse_faces(im_paths, detector, shape_pred, face_phi):
 			                          ,'top'   : tp
 			                          ,'bottom': bot
 			                          }
+			                 , 'path': im_path
 			                 }       
 
 		elif len(dets) == 0:

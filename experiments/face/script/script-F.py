@@ -22,10 +22,9 @@ try: app
 except: app = App()
 
 model_root  = app.fetch('assets/dlib')
-shard_root  = app.fetch('female-shards')
+shard_root  = app.fetch('shards-female')
 shards      = [ os.path.join(shard_root, p) for p in os.listdir(shard_root) ]
 out_root    = app.fetch('data/results/face/dlib-resnet_model_v1')
-
 
 ############################################################
 
