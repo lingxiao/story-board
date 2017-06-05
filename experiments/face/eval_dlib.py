@@ -46,7 +46,6 @@ no_face_false_positive =  len(false_pos_no_face)/float(len(no_face)) * 100
 
 print('\n\t>> false positive face detection: ' + str(no_face_false_positive) + '%')
 
-
 ############################################################
 '''
 	evaluate set of pictures with faces

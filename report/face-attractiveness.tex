@@ -45,9 +45,18 @@ This library is found here: https://cmusatyalab.github.io/openface/. It is a Tor
 
 Now we will review the method in FaceNet. 
 
+From a practical perspective, using open face requires installing Docker, and the checking out a docker container and running the demos from within there. However, there is one tutorial that appears to alleviate some of the problems:
+	\[
+		https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78,
+	\]
+
+this tutorial walks through the face detection pipeline, and the github page states that it has packaged some OpenFace and TensorFlow libraries for everyday use. 
+
+
 \subsubsection{FaceNet in Tensorflow}.
 
-There is one implementation found on github at: https://github.com/davidsandberg/facenet. There is no documentation, although the code appears reasonably organized. This gives me the possiblity of training my own classifer on the proprietary Tinder data set.
+There is one implementation found on github at: https://github.com/davidsandberg/facenet. There is no documentation, although the code appears reasonably organized, and recently updated. g
+
 
 `\subsubsection{YOLO9000}.
 
@@ -59,11 +68,19 @@ This is the most mature of all libraries, and thus the documentation is complete
 \subsection{Normalization via Appearence Based Models}
 
 
-
 \subsection{Existing Solutions}
 
 
 \subsection{Implementation}
+
+
+\subsection{``Theory"}
+
+It may behoove you to review CIS580 lecture again, and then review this document:
+	\[
+		http://www.global-sci.org/jfbi/issues/v8n4/pdf/JFBI-8.4.13.pdf
+	\]
+for the specifics of nonrigid structure from motion of faces.
 
 
 \subsection{Results}
