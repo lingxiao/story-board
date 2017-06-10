@@ -102,14 +102,69 @@
  	* `docker stop` to detach container
 
 
-## Building a Docker Image
+## Building a Docker Image of a flask-app
 
-1. 
+1. navigate to `path/to/flask-app`
+
+2. create a docker file named 'Dockerfile' with:
+	```
+		<!-- python with some batteries -->
+		FROM python:2.7.13-onbuild
+		<!-- flask app port number -->
+		EXPOSE 5000
+		<!-- running the application -->
+		CMD ['python', './app.py']
+	```
+
+3. build the image with:
+
+	`docker build -t lingxiaoseas/catnip .`
+
+4. run the image with:
+	
+	`docker run -p 8888:5000 lingxiaoseas/catnip`
+
+	publish `-p` the image with 5000 on server side and 
+	externally on 8888
+
 
 
 
 ## source: 
 * https://prakhar.me/docker-curriculum/
+* https://www.ctl.io/developers/blog/post/what-is-docker-and-when-to-use-it/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

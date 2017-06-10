@@ -19,5 +19,3 @@ except:
 	paths = app.module('docker-tut')
 
 
-
-
