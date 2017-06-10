@@ -3,10 +3,11 @@
 # path to data
 # /Users/lingxiao/Documents/camera-project/data/story-board
 data:
-    local: /Users/lingxiao/Box Sync/story-board
+    local: /Users/lingxiao/Documents/camera-project/data/story-board
     eniac: /home1/l/lingxiao/xiao/camera-project/data/story-board
     tesla: /data2/xiao
     grid: /nlp/data/xiao/story-board
+    openface: /root/camera-project/data/story-board
 
 # open cv
 opencv: /Users/lingxiao/anaconda/lib/python2.7/site-packages/opencv
@@ -16,8 +17,7 @@ clarifai:
     APP-ID: gUglQJObqqhmIFliNvmGz8W4qu328HhAT9hjFbpH
     APP-SECRET: ANTIvsmSTQl-OBA19X_YlSYrMhwYMD0EjDSwknuG
 
-
-# facebook account information for crawling tinder
+# facebook account information for tinder
 facebook:
     meg:
         token: 

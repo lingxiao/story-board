@@ -10,35 +10,26 @@ import time
 
 import cv2
 import dlib
-# import openface
+import pickle
 import argparse
 import itertools
 import numpy as np
-np.set_printoptions(precision=2)
 
-import pickle
+import openface
 from skimage import io
 from PIL import ImageFile
 
+from app import *
+
 ImageFile.LOAD_TRUNCATED_IMAGES = True
+np.set_printoptions(precision=2)
 
 ############################################################
 
+try: app
+except: app = App()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+align = openface.AlignDlib(args.dlibFacePredictor)
+net   = openface.TorchNeuralNet(args.networkModel, args.imgDim, cuda=args.cuda)
 
 

@@ -97,13 +97,10 @@ class App:
     return make_dirs(get_path(self.ENV, name), subdirs)
 
   def shard_data(self, rel_path):
-
     in_dir = shard_data_pointers(fetch_path(self.ENV, rel_path))
     shard_data_pointers(in_dir)
 
-
 ############################################################
-
 '''
   @Use: get all directories from in_dir and 
         write path to out_dir
@@ -165,6 +162,10 @@ def locate_data_root(ENV, root):
       droot = 'data/grid'
     else:
       droot = 'data/eniac'
+
+  # openface docker container
+  elif root[0:6] == '/root/':
+    droot = 'data/openface'
 
   # tesla
   else:
@@ -231,8 +232,7 @@ def flatten(d, parent_key='', sep='/'):
         one is is overridden by the second one
 '''
 def get_all_paths(root):
-  paths = list(set(go_paths(root,[])))
-  return { to_name(root, p):  p for  p in paths }
+  return { to_name(root, d):  d for d,_,_ in os.walk(root) }
 
 '''
   @Use: make name of path `root/path/to/dir` `path/to/dir`
@@ -244,22 +244,6 @@ def to_name(root, path):
     return name[1:]
   else:
     return 'root'
-
-def go_paths(root, dirs):
-
-  if os.path.isdir(root):
-
-    subs = [p for p in os.listdir(root) if '.' not in p]
-
-    if subs:
-      paths     = [ (p, os.path.join(root, p)) for p in subs ]
-      sub_paths = join([ go_paths(r,[]) for _,r in paths ])
-      return [root] + sub_paths + dirs
-    else:
-      return [root] + dirs
-  else:
-    return [root] + dirs
-
 ############################################################
 '''
   @Use: given absolute path `root` to directory
@@ -328,5 +312,26 @@ header = '############################################################\n'  \
        + 'import pickle\n'                                                 \
        + 'from app import *\n\n'                                           \
        + _mk_dir_
+
+
+
+'''
+  @Depricated: use os.walk instead
+'''
+def go_paths(root, dirs):
+
+  if os.path.isdir(root):
+
+    subs = [p for p in os.listdir(root) if '.' not in p]
+
+    if subs:
+      paths     = [ (p, os.path.join(root, p)) for p in subs ]
+      sub_paths = join([ go_paths(r,[]) for _,r in paths ])
+      return [root] + sub_paths + dirs
+    else:
+      return [root] + dirs
+  else:
+    return [root] + dirs
+
 
 
