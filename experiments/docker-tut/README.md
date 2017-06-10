@@ -71,7 +71,16 @@
 
 ## Basic Docker Website
 
-1. 
+1. `docker pull prakhar1989/static-site`
+
+2. `docker run prakhar1989/static-site` 
+	
+	will results in `Nginx is running ...`, but no ports are exposed. In stead run:
+
+	`docker run -d -P --name static-site prakhar1989/static-site`
+
+	where `-d` is detach mode, so command line is free 
+	`-P` puslish all exposed ports
 
 
 ## source: 
