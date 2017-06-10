@@ -17,6 +17,12 @@
 
 	* child image: images derived from base image
 
+	* official image: maintained by people at Docker. Usually one word long
+
+	* user image: build by devs at large. should be formated as:
+
+		`user/image-name`
+
 
 2. Containers
 
