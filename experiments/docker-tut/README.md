@@ -108,11 +108,11 @@
 
 2. create a docker file named 'Dockerfile' with:
 	```
-		<!-- python with some batteries -->
+		# python with some batteries
 		FROM python:2.7.13-onbuild
-		<!-- flask app port number -->
+		# flask app port number 
 		EXPOSE 5000
-		<!-- running the application -->
+		# running the application 
 		CMD ['python', './app.py']
 	```
 
