@@ -12,6 +12,13 @@
 
 * why: more lightweight than virtual machines, so can use underlying system/resources better
 
+## Basic Hello World
+
+1. install docker
+2. check docker is properly installed:
+	`docker run hell-world`
+
+
 
 
 
