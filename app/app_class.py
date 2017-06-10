@@ -206,7 +206,7 @@ def fetch_path(PATH, name):
   if names:
     return PATH[names[0]]
   else:
-    raise NameError('Error: cannot locate path named: ' + name)
+    raise OSError('Error: cannot locate path named: ' + name)
 
 '''
   @Use: given dictionary, flatten all key value pairs

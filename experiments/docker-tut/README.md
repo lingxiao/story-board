@@ -4,7 +4,7 @@
 
 * what: tool that allow users to package an application and its dependencies into **standardized** unit for development. 
 
-* why: develope in one enviornment, deploy in another
+* why: develop in one enviornment, deploy in another
 
 ## Terminology
 
@@ -22,7 +22,6 @@
 	* user image: build by devs at large. should be formated as:
 
 		`user/image-name`
-
 
 2. Containers
 
@@ -111,34 +110,6 @@
 
 ## source: 
 * https://prakhar.me/docker-curriculum/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
