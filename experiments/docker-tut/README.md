@@ -47,7 +47,13 @@
 	* note here if we `rm -rf bin`, all shell commands are now disabled.
 	  but if we exit an restart `busybox`, we see the `bin` directory is back
 
-8. 
+8. Finally, remove containers that are no longer used with
+	
+	`docker rm [CONTAINER-ID]`
+
+	or rm all exited containers with:
+
+	`docker rm $(docker ps -a -q -f status=exited)`
 
 
 ## source: 
