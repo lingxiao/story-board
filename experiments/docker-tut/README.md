@@ -21,12 +21,15 @@
 	`docker run hell-world`
 
 3. pull an **image** from the docker registry
+
 	`docker pull busy-box`
 
 4. check the image is on local disk
+
 	`docker images`
 
 5. run the busy box:	
+
 	`docker run busybox echo "hello world"`
 
 
