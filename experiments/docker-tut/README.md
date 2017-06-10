@@ -116,6 +116,10 @@
 		CMD ['python', './app.py']
 	```
 
+	* Note `onbuild` will parse all requirements in the
+	`requirements.txt` file and install them to the container 
+	 as well
+
 3. build the image with:
 
 	`docker build -t lingxiaoseas/catnip .`
@@ -128,6 +132,7 @@
 	externally on 8888
 
 
+## Deploying docker on AWS
 
 
 ## source: 
