@@ -17,6 +17,7 @@
 1. install docker
 
 2. check docker is properly installed:
+
 	`docker run hell-world`
 
 3. pull an **image** from the docker registry
