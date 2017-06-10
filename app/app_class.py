@@ -316,7 +316,6 @@ header = '############################################################\n'  \
        + 'from app import *\n\n'                                           \
        + _mk_dir_
 
-
 '''
   @Depricated: use os.walk instead
 '''

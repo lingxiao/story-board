@@ -4,7 +4,7 @@
 
 * what: tool that allow users to package an application and its dependencies into **standardized** unit for development. 
 
-* why: devleope in one enviornment, deploy in another
+* why: develope in one enviornment, deploy in another
 
 ## Containers
 
@@ -33,11 +33,55 @@
 	`docker run busybox echo "hello world"`
 
 6. check all containers that are running with: `docker ps`
+
    check all containers that ever ran: `docker ps -a`
 
+7. Running more than one command in a container:
+
+	`docker run -it busybox sh`
+
+	allow us to run an interactive shell. Note we are now 
+	in the busybox container as if it's a virtual machine
+	and presumably we can develop everything in there
+
+8. 
 
 
 ## source: 
 * https://prakhar.me/docker-curriculum/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
