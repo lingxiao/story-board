@@ -68,19 +68,34 @@
 	`docker rm $(docker ps -a -q -f status=exited)`
 
 
-
 ## Basic Docker Website
 
 1. `docker pull prakhar1989/static-site`
 
 2. `docker run prakhar1989/static-site` 
 	
-	will results in `Nginx is running ...`, but no ports are exposed. In stead run:
+	will results in `Nginx is running ...`, but no ports are exposed. 
+
+	* Instead run:
 
 	`docker run -d -P --name static-site prakhar1989/static-site`
 
 	where `-d` is detach mode, so command line is free 
-	`-P` puslish all exposed ports
+	`-P` puslish all exposed ports to a random port.
+
+	* `docker port static-site` will tell you the port at:
+
+		`80/tcp -> 0.0.0.0:ID`
+
+	* go to `localhost:[ID]` on browser
+
+ 	* `docker stop` to detach container
+
+
+## Building a Docker Image
+
+1. 
+
 
 
 ## source: 
