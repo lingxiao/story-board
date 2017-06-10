@@ -18,7 +18,7 @@
 
 2. check docker is properly installed:
 
-	`docker run hell-world`
+	`docker run hello-world`
 
 3. pull an **image** from the docker registry
 
@@ -31,6 +31,10 @@
 5. run the busy box:	
 
 	`docker run busybox echo "hello world"`
+
+6. check all containers that are running with: `docker ps`
+   check all containers that ever ran: `docker ps -a`
+
 
 
 ## source: 
