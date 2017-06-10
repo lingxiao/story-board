@@ -9,12 +9,21 @@
 ## Terminology
 
 1. Images
+	
+	* what: blueprint of application. Get an image using `docker pull`
+
 
 2. Containers
 
-	* what: docker's equivalent solution to **virtual machines**
+	* what: build from images. Docker's equivalent solution to **virtual machines**. Created using `docker run`
 
 	* why: more lightweight than virtual machines, so can use underlying system/resources better
+
+3. Docker Daemon
+	
+	* what: background service running on host that manages 
+	building, running and distributing docker containers
+
 
 ## Basic Hello World
 
