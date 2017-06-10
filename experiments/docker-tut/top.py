@@ -12,8 +12,13 @@ from app import *
 '''
 	make current directory
 '''
-app   = App()
-paths = app.module('docker-tut')
+try:
+	app
+except:	
+	app   = App()
+	paths = app.module('docker-tut')
+
+
 
 
 

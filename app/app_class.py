@@ -300,8 +300,11 @@ _mk_dir_ = '\n############################################################' \
          + "\n'''"                      \
          + "\n\tmake current directory" \
          + "\n'''"                      \
-         + "\napp   = App()"            \
-         + "\npaths = app.module('{MODULE}')"
+         + "\ntry:"                     \
+         + "\n\tapp"                    \
+         + "\nexcept:"                  \
+         + "\n\tapp   = App()"          \
+         + "\n\tpaths = app.module('{MODULE}')"
 
 header = '############################################################\n'  \
        + '# Module  : {MODULE}/top\n'                                      \
@@ -312,7 +315,6 @@ header = '############################################################\n'  \
        + 'import pickle\n'                                                 \
        + 'from app import *\n\n'                                           \
        + _mk_dir_
-
 
 
 '''
