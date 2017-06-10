@@ -40,9 +40,12 @@
 
 	`docker run -it busybox sh`
 
-	allow us to run an interactive shell. Note we are now 
+	* allow us to run an interactive shell. Note we are now 
 	in the busybox container as if it's a virtual machine
 	and presumably we can develop everything in there
+
+	* note here if we `rm -rf bin`, all shell commands are now disabled.
+	  but if we exit an restart `busybox`, we see the `bin` directory is back
 
 8. 
 
