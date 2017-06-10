@@ -6,11 +6,15 @@
 
 * why: develope in one enviornment, deploy in another
 
-## Containers
+## Terminology
 
-* what: docker's equivalent solution to **virtual machines**
+1. Images
 
-* why: more lightweight than virtual machines, so can use underlying system/resources better
+2. Containers
+
+	* what: docker's equivalent solution to **virtual machines**
+
+	* why: more lightweight than virtual machines, so can use underlying system/resources better
 
 ## Basic Hello World
 
@@ -54,6 +58,8 @@
 	or rm all exited containers with:
 
 	`docker rm $(docker ps -a -q -f status=exited)`
+
+
 
 
 ## source: 
