@@ -11,6 +11,11 @@
 1. Images
 	
 	* what: blueprint of application. Get an image using `docker pull`
+		it is conceptually similar to a git repo.
+
+	* base image: image with no parent image. Usually an OS image like ubuntu.
+
+	* child image: images derived from base image
 
 
 2. Containers
