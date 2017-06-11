@@ -134,6 +134,8 @@
 
 ## Deploying docker on AWS
 
+1. 
+
 
 ## source: 
 * https://prakhar.me/docker-curriculum/
