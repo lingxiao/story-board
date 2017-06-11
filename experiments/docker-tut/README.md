@@ -135,7 +135,7 @@
 	externally on 8888
 
 
-## Deploying docker on AWS
+## Deploying Docker on AWS
 
 1. see website for instructions. But there should be a 
 
@@ -157,8 +157,12 @@
 		  "Logging": "/var/log/nginx"
 		}   	
    	```
-
    	where "Name" is `username/app-name`.
+
+## Multicontainer Environments
+
+1. 
+
 
 
 ## source: 
