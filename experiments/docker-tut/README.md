@@ -120,6 +120,9 @@
 	`requirements.txt` file and install them to the container 
 	 as well
 
+	* see: https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/
+	for more information
+
 3. build the image with:
 
 	`docker build -t lingxiaoseas/catnip .`
