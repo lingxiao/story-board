@@ -137,7 +137,28 @@
 
 ## Deploying docker on AWS
 
-1. 
+1. see website for instructions. But there should be a 
+
+	`Dockerrun.aws.json`
+   file in toplevel directory, and it might look like this:
+
+   	```
+		{
+		  "AWSEBDockerrunVersion": "1",
+		  "Image": {
+		    "Name": "lingxiaoseas/catnip",
+		    "Update": "true"
+		  },
+		  "Ports": [
+		    {
+		      "ContainerPort": "5000"
+		    }
+		  ],
+		  "Logging": "/var/log/nginx"
+		}   	
+   	```
+
+   	where "Name" is `username/app-name`.
 
 
 ## source: 
