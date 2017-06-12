@@ -161,8 +161,9 @@
    	```
    	where "Name" is `username/app-name`.
 
-Multicontainer Environments
-===
+## Multicontainer Environments
+
+We will use docker compose only.
 
 1. 
 
