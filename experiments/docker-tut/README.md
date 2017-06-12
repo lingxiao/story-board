@@ -75,7 +75,9 @@
 
 	or rm all exited containers with:
 
-	`docker rm $(docker ps -a -q -f status=exited)`
+	`
+		docker rm $(docker ps -a -q -f status=exited)
+	`
 
 
 ## Basic Docker Website
@@ -214,7 +216,29 @@
 
 	This will take a moment as docker download ubuntu image
 
+	2. Now we need to run elastic search. First let's see if elasticsearch is on docker:
+		`python search elasticsearch`
+		should return it is
 
+	3. Now let's run elastic search:
+		`
+			docker run -dp 9200:9200 elasticsearch
+		`
+		once again, `-dp` means detached mode, and publish
+		at specified ports. Now do:
+
+		`
+			curl 0.0.0.0:9200
+		`	
+		and we should see info you elasticsearch.
+
+	4. Now if we try:
+		`
+			docker run -P lingxiaoseas/foodtrucks-web
+		`
+		it should say "unable to connnect" because ElasticSearch is not connected.
+
+	5. Next we need to learn about Docker network.
 
 
 
@@ -222,8 +246,9 @@
 
 
 ## source: 
-* https://prakhar.me/docker-curriculum/
-* https://www.ctl.io/developers/blog/post/what-is-docker-and-when-to-use-it/
+* main source: https://prakhar.me/docker-curriculum/
+* short explanation: https://www.ctl.io/developers/blog/post/what-is-docker-and-when-to-use-it/
+* expose versus publish: https://www.ctl.io/developers/blog/post/docker-networking-rules/
 
 
 
