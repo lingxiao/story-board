@@ -100,7 +100,7 @@
 		`80/tcp -> 0.0.0.0:ID`
 
 	* go to `localhost:[ID]` on browser
-
+ne
  	* `docker stop` to detach container
 
 
@@ -236,9 +236,45 @@
 		`
 			docker run -P lingxiaoseas/foodtrucks-web
 		`
-		it should say "unable to connnect" because ElasticSearch is not connected.
+		it should say "unable to connnect" because ElasticSearch is not connected. But it is running, to confirm, run
+
+			`docker ps`
+
+		and we should see the container is up.
 
 	5. Next we need to learn about Docker network.
+
+		Note when we do `docker ps`, we see under `PORTS`:
+
+		`0.0.0.0:9200 -> 9200/tcp, 9300/tcp`
+
+		the `0.0.0.0` means that we are accessing from the host machine, we need to access from `foodtrucks-web`.
+
+
+	6. We need to create a new network:
+		```
+			# create the network
+			docker network create foodtrucks
+
+			# start the ES container
+			docker run -d --net foodtrucks -p 9200:9200 -p 9300:9300 --name es elasticsearch
+
+			# start the flask app container
+			docker run -d --net foodtrucks -p 5000:5000 --name foodtrucks-web lingxiaoseas/foodtrucks-web
+
+		```
+
+		the gist is that we need to create a private network, 
+		start a container with ports for our app and elasticsearch, then run the container
+
+
+
+## Docker Compose for multiple containers
+
+* automates the aforementioned steps
+
+# build the flask container
+docker build -t lingxiaoseas/foodtrucks-web .
 
 
 
