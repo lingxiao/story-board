@@ -132,7 +132,9 @@
 	`docker run -p 8888:5000 lingxiaoseas/catnip`
 
 	publish `-p` the image with 5000 on server side and 
-	externally on 8888
+	externally on 8888. so the syntax is:
+
+	`HOST:CONTAINER`
 
 
 ## Deploying Docker on AWS
