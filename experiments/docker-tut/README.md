@@ -107,6 +107,7 @@
 1. navigate to `path/to/flask-app`
 
 2. create a docker file named 'Dockerfile' with:
+
 	```
 		# python with some batteries
 		FROM python:2.7.13-onbuild
@@ -139,9 +140,21 @@
 
 ## Deploying Docker on AWS
 
-1. see website for instructions. But there should be a 
+0. login if needed:
+
+	```
+		docker login
+		Username: lingxiaoseas
+	```
+
+1. push project to docker repo
+
+	`docker push lingxiaoseas/catnip`
+
+2. see website for instructions. But there should be a 
 
 	`Dockerrun.aws.json`
+
    file in toplevel directory, and it might look like this:
 
    	```
@@ -163,9 +176,48 @@
 
 ## Multicontainer Environments
 
-We will use docker compose only.
+1. `cd` into `foodtrucks-web` directory, and there should be a 		Dockerfile with:
+	```
+		# start from base
+		FROM ubuntu:14.04
+		MAINTAINER Xiao Ling <lingxiao@seas.upenn.edu>
 
-1. 
+		# install system-wide deps for python and node
+		RUN apt-get -yqq update
+		RUN apt-get -yqq install python-pip python-dev
+		RUN apt-get -yqq install nodejs npm
+		RUN ln -s /usr/bin/nodejs /usr/bin/node
+
+		# copy our application code
+		ADD flask-app /opt/flask-app
+		WORKDIR /opt/flask-app
+
+		# fetch app specific deps
+		RUN npm install
+		RUN npm run build
+		RUN pip install -r requirements.txt
+
+		# expose port
+		EXPOSE 5000
+
+		# start app
+		CMD [ "python", "./app.py" ]
+
+	```
+
+	Now do:
+
+	```
+		docker build -t lingxiaoseas/foodtrucks-web .
+	```
+	(don't for get the dot!)
+
+	This will take a moment as docker download ubuntu image
+
+
+
+
+
 
 
 

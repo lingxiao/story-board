@@ -44,3 +44,5 @@ def writeToFile(data, filename="data.geojson"):
 if __name__ == "__main__":
     data = getData("http://data.sfgov.org/resource/rqzj-sfat.json")
     writeToFile(convertData(data[:350]), filename="trucks.geojson")
+
+
