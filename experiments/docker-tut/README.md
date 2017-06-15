@@ -29,7 +29,22 @@
 
 	* why: more lightweight than virtual machines, so can use underlying system/resources better
 
-3. Docker Daemon
+3. Data Volumes
+
+	* what: a specially-designated directory within container(s), bypass the union file system. 
+
+	* why: usually mount local directory onto docker container. Can develop locally
+	as if in container. Then deploy the container with local codebase (somehow)
+
+	* example:
+
+	```	
+		docker run -v /Users/lingxiao/Documents/camera-project:/root/camera-project -p 9000:9000 -p 8000:8000 -t -i bamos/openface /bin/bash
+	```
+
+4. Data Volume Containers	
+
+5. Docker Daemon
 	
 	* what: background service running on host that manages 
 	building, running and distributing docker containers
@@ -78,7 +93,6 @@
 	`
 		docker rm $(docker ps -a -q -f status=exited)
 	`
-
 
 ## Basic Docker Website
 
@@ -204,7 +218,6 @@ ne
 
 		# start app
 		CMD [ "python", "./app.py" ]
-
 	```
 
 	Now do:
@@ -268,17 +281,19 @@ ne
 		start a container with ports for our app and elasticsearch, then run the container
 
 
-
 ## Docker Compose for multiple containers
 
-* automates the aforementioned steps
+	* automates the afore-mentioned steps
 
-# build the flask container
-docker build -t lingxiaoseas/foodtrucks-web .
+	* build the flask container
 
+		docker build -t lingxiaoseas/foodtrucks-web .
 
+	1. free all ports:
 
-
+		`
+			docker stop $(docker ps -q)
+		`	
 
 
 ## source: 
